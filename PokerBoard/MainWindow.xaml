@@ -1,0 +1,47 @@
+﻿<Window x:Class="PokerBoard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PokerBoard"
+        mc:Ignorable="d"
+        Background="#109c35"
+        ResizeMode="CanResizeWithGrip"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <!-- Cards-->
+        <Grid>
+            <ItemsControl ItemsSource="{Binding Cards}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="5" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Image>
+                            <Image.Source>
+                                <Binding Converter="{x:Static local:CardToImageConverter.Instance}"/>
+                            </Image.Source>
+                        </Image>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+
+        <!-- Flop Turn River Buttons-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="FlopButton" Click="FlopButton_Click" Content="Flop" Grid.Column="0" Margin="5" Height="50" />
+            <Button x:Name="TurnButton" Click="TurnButton_Click" Content="Turn" Grid.Column="1" Margin="5"/>
+            <Button x:Name="RiverButton" Click="RiverButton_Click" Content="River" Grid.Column="2" Margin="5"/>
+        </Grid>
+
+    </StackPanel>
+
+</Window>
