@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,14 @@ namespace PokerBoard
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var card = (CardViewModel)value;
+
+            
+/*            if (!Enum.IsDefined(typeof(CardType), card.CardType))
+            {
+                return new BitmapImage(new Uri($"pack://application:,,,/Images/Cards/red_joker.png"));
+            }*/
+
+
             string path = $"Images/Cards/{card.Value}_of_{card.Suit}.png";
             return new BitmapImage(new Uri($"pack://application:,,,/{path}"));
         }

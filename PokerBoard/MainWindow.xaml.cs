@@ -28,17 +28,29 @@ namespace PokerBoard
         #region FLOP TURN RIVER BUTTONS
         private void FlopButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var t = (BoardViewModel)DataContext;
+            foreach (var card in t.Cards.Where(card => card.CardType == CardType.Flop))
+            {
+                card.Visability = Visibility.Visible;
+            }
         }
 
         private void TurnButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var t = (BoardViewModel)DataContext;
+            foreach (var card in t.Cards.Where(card => card.CardType == CardType.Turn))
+            {
+                card.Visability = Visibility.Visible;
+            }
         }
 
         private void RiverButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var t = (BoardViewModel)DataContext;
+            foreach (var card in t.Cards.Where(card => card.CardType == CardType.River))
+            {
+                card.Visability = Visibility.Visible;
+            }
         }
         #endregion
     }

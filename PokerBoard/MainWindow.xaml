@@ -19,7 +19,7 @@
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Image>
+                        <Image x:Name="CardImage" Visibility="{Binding Visability}">
                             <Image.Source>
                                 <Binding Converter="{x:Static local:CardToImageConverter.Instance}"/>
                             </Image.Source>
