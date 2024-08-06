@@ -16,9 +16,9 @@ namespace PokerBoard
         {
             var cards = BoardStructure.generateCards();
             this.Cards = new List<CardViewModel>(cards.Select(card => new CardViewModel(card.Suit, card.Value)));
-            for (int i = 0; i < 3; i++) { this.Cards[i].CardType = CardType.Flop; }
-            this.Cards[3].CardType = CardType.Turn;
-            this.Cards[4].CardType = CardType.River;
+            for (int i = 0; i < 3; i++) { this.Cards[i].CardType = FlopTurnRiver.Flop; }
+            this.Cards[3].CardType = FlopTurnRiver.Turn;
+            this.Cards[4].CardType = FlopTurnRiver.River;
 
         }
     }

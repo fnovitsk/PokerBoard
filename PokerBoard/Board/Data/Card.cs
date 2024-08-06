@@ -11,7 +11,7 @@ namespace PokerBoard
         public string Suit { get; set; }
         public string Value { get; set; }
 
-        public CardType Type { get; set; }
+        public FlopTurnRiver Type { get; set; }
 
         public override string ToString()
         {

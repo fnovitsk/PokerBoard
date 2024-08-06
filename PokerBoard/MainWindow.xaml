@@ -19,7 +19,7 @@
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Image x:Name="CardImage" Visibility="{Binding Visability}">
+                        <Image x:Name="CardImage" Visibility="{Binding imageVisibility}">
                             <Image.Source>
                                 <Binding Converter="{x:Static local:CardToImageConverter.Instance}"/>
                             </Image.Source>
@@ -37,9 +37,9 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="FlopButton" Click="FlopButton_Click" Content="Flop" Grid.Column="0" Margin="5" Height="50" />
-            <Button x:Name="TurnButton" Click="TurnButton_Click" Content="Turn" Grid.Column="1" Margin="5"/>
-            <Button x:Name="RiverButton" Click="RiverButton_Click" Content="River" Grid.Column="2" Margin="5"/>
+            <Button x:Name="FlopButton"  IsEnabled="True" Click="FlopButton_Click" Content="Flop" Grid.Column="0" Margin="5" Height="50" />
+            <Button x:Name="TurnButton"  IsEnabled="{Binding Cards[0].isVisibile}" Click="TurnButton_Click" Content="Turn" Grid.Column="1" Margin="5"/>
+            <Button x:Name="RiverButton" IsEnabled="{Binding Cards[3].isVisibile}" Click="RiverButton_Click" Content="River" Grid.Column="2" Margin="5"/>
         </Grid>
 
     </StackPanel>

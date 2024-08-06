@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PokerBoard
 {
-    public enum CardType
+    public enum FlopTurnRiver
     {
         Flop,
         Turn,

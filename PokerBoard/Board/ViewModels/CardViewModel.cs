@@ -14,12 +14,20 @@ namespace PokerBoard
         public string Suit { get; set; }
         public string Value { get; set; }
 
-        public CardType CardType { get; set; }
+        public FlopTurnRiver CardType { get; set; }
         private Visibility _imageVisibility;
-
+        public bool isVisibile
+        {
+            get
+            {
+                if (_imageVisibility == Visibility.Visible)
+                    return true;
+                else return false;
+            }
+        }
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Visibility Visability
+        public Visibility imageVisibility
         {
             get { return _imageVisibility; }
             set
@@ -27,7 +35,7 @@ namespace PokerBoard
                 if (_imageVisibility != value)
                 {
                     _imageVisibility = value;
-                    OnPropertyChanged(nameof(Visability));
+                    OnPropertyChanged(nameof(imageVisibility));
                 }
             }
         }
@@ -36,8 +44,6 @@ namespace PokerBoard
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
-
-        
 
         public CardViewModel(string suit, string value)
         {

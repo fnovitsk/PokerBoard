@@ -29,27 +29,27 @@ namespace PokerBoard
         private void FlopButton_Click(object sender, RoutedEventArgs e)
         {
             var t = (BoardViewModel)DataContext;
-            foreach (var card in t.Cards.Where(card => card.CardType == CardType.Flop))
+            foreach (var card in t.Cards.Where(card => card.CardType == FlopTurnRiver.Flop))
             {
-                card.Visability = Visibility.Visible;
+                card.imageVisibility = Visibility.Visible;
             }
         }
 
         private void TurnButton_Click(object sender, RoutedEventArgs e)
         {
             var t = (BoardViewModel)DataContext;
-            foreach (var card in t.Cards.Where(card => card.CardType == CardType.Turn))
+            foreach (var card in t.Cards.Where(card => card.CardType == FlopTurnRiver.Turn))
             {
-                card.Visability = Visibility.Visible;
+                card.imageVisibility = Visibility.Visible;
             }
         }
 
         private void RiverButton_Click(object sender, RoutedEventArgs e)
         {
             var t = (BoardViewModel)DataContext;
-            foreach (var card in t.Cards.Where(card => card.CardType == CardType.River))
+            foreach (var card in t.Cards.Where(card => card.CardType == FlopTurnRiver.River))
             {
-                card.Visability = Visibility.Visible;
+                card.imageVisibility = Visibility.Visible;
             }
         }
         #endregion
